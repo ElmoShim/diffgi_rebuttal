@@ -1,1 +1,9 @@
 .claude/
+**/.DS_Store
+
+# LaTeX build artifacts
+rebuttal/*.aux
+rebuttal/*.log
+rebuttal/*.out
+rebuttal/*.synctex.gz
+rebuttal/rebuttal.pdf
