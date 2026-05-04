@@ -16,7 +16,7 @@
 \usepackage{booktabs}
 
 % The "axessiblity" package can be found at: https://ctan.org/pkg/axessibility?lang=en
-% \usepackage[accsupp]{axessibility}  % Improves PDF readability for those with disabilities.
+\usepackage[accsupp]{axessibility}  % Improves PDF readability for those with disabilities.
 
 
 % ---------------------------------------------------------------
@@ -50,7 +50,7 @@
 
 % ---------------------------------------------------------------
 % TODO REBUTTAL: Please enter paper ID
-\def\paperID{*****} % *** Enter the paper ID here
+\def\paperID{12200} % *** Enter the paper ID here
 \def\confName{ECCV}
 \def\confYear{2026}
 
@@ -67,79 +67,36 @@
 
 % ---------------------------------------------------------------
 % TODO REBUTTAL: Enter your response below
-\section{Introduction}
 
-After receiving paper reviews, the authors may optionally submit a rebuttal to address the reviewers' comments, which will be limited to a {\bf one page} PDF file.
-Please follow the steps and style guidelines outlined below for submitting your author response.
+\noindent We thank the reviewers for their feedback. In the camera-ready we will fix the GIMDiffusion citation ([15]$\to$[11]) and adopt ``multi-chart geometry image'' consistently. [R3 minor]
 
-The author rebuttal is optional and, following similar guidelines to previous conferences, is meant to provide you with an opportunity to rebut factual errors or to supply additional information requested by the reviewers.
-It is NOT intended to add new contributions (theorems, algorithms, experiments) that were absent in the original submission and NOT specifically requested by the reviewers.
-You may optionally add a figure, graph, table, or proof to your rebuttal to better illustrate your answer to the reviewers' comments.
+\medskip
+\noindent\textbf{[R3] DMS-based end-to-end differentiability \emph{to mesh} is the key contribution.} Prior GI works (Omages, GIMDiffusion, GarmageNet) are differentiable only up to image-domain pixel losses; mesh extraction is a non-differentiable post-process, so 3D-domain supervision cannot reach the latent. DMS closes this gap, enabling Normal Rendering Loss to be computed in 3D and back-propagated to the VAE encoder/decoder (Supp.~Sec.~6: ``$\mathcal{L}_\text{Normal}$ can propagate gradients \dots\ \emph{only because the DMS module is fully differentiable}''). Tab.~2 isolates the two effects. Representation alone (Occ$\rightarrow$TSDF) gives CD $1.503\!\rightarrow\!0.595\!\times\!10^{-3}$ ($-60\%$). Adding the Normal Loss---usable \emph{only} via DMS---further improves NC $0.921\!\rightarrow\!0.961$ and JSD $2.169\!\rightarrow\!1.244\!\times\!10^{-3}$. TSDF~+~DMS~+~$\mathcal{L}_\text{Normal}$ is therefore a coupled contribution that enables 3D end-to-end learning, not a sum of standard components.
 
-Consistent with established practices in computer vision, reviewers should refrain from requesting significant additional experiments for the rebuttal or penalize for lack of additional experiments.
-Authors should refrain from including new experimental results in the rebuttal, especially when not specifically requested to do so by the reviewers.
-Authors may include figures with illustrations or comparison tables of results reported in the submission/supplemental material or in other papers.
+\noindent\textbf{[R1] Isolating the effect of SD~1.5 VAE initialization.} We use the SD~1.5 VAE only to accelerate convergence; trained on in-the-wild RGB, it carries no geometry-specific prior. We address R1's concern---``the gain may be confounded between representation and a stronger VAE''---in two steps. \textbf{(i)} Tab.~2 \emph{fixes} the VAE init and varies only the representation: Occ$\rightarrow$TSDF reduces CD $1.503\!\rightarrow\!0.595\!\times\!10^{-3}$ ($-60\%$), demonstrating that the representation contributes independently. \textbf{(ii)} We are further running a from-scratch-vs.-SD-pretrained VAE comparison showing the two converge to comparable final performance (the latter only faster); this will be included in the supplementary. % TODO: from-scratch vs SD-pretrained VAE convergence/final-performance experiment
 
-Just like the original submission, the rebuttal must maintain anonymity.
-Note that the rebuttal must not include external links.
-The rebuttal must comply with this template (the use of sections is not required, though recommended to structure the rebuttal for ease of reading).
-The rebuttal must also include line numbers as in this example document.
-This allows for easy referencing of your response by reviewers and area chairs.
+\noindent\textbf{[R1] Rationale for the unified DMS evaluation protocol.} We agree that mesh extraction can affect outcomes. For this reason we apply the same extractor (DMS) to every baseline; on binary occupancy DMS produces a result equivalent to standard Marching Squares (Supp.~Sec.~3), so no baseline is structurally disadvantaged. The protocol (Supp.~Sec.~5) is designed to isolate \emph{representation and compression} from mesh-extraction engineering---each baseline's native pipeline embeds different boundary heuristics that would otherwise mask the representation's own contribution. Under this protocol our method retains its advantage on both ABO and GarmageSet (Tab.~1). We are also preparing a mini comparison verifying the visual and numerical equivalence of DMS and standard MS on occupancy inputs, to be included in the supplementary. % TODO: DMS = standard MS equivalence (occupancy input) mini experiment / visualization
 
+\noindent\textbf{[R3] Why no direct GIMDiffusion comparison.} GIMDiffusion's code, weights, and preprocessed dataset are all unreleased, preventing same-condition reproduction. Nevertheless, its geometry pipeline (binary-mask GI + SD-initialized VAE + LDM; Collaborative Control is texture-only) is structurally equivalent to our \emph{``Occ w/o $\mathcal{L}_\text{Normal}$''} ablation row. Against this baseline, our method (TSDF~+~$\mathcal{L}_\text{Normal}$) improves CD $1.503\!\rightarrow\!0.461\!\times\!10^{-3}$ ($3.3\times$) and JSD $4.539\!\rightarrow\!1.244\!\times\!10^{-3}$ ($3.6\times$, Tab.~2). We will make this relationship explicit in the camera-ready.
 
-%-------------------------------------------------------------------------
-\subsection{Response length}
-Author responses must be no longer than 1 page in length including any references and figures.
-Overlength responses will simply not be reviewed.
-This includes responses where the margins and formatting are deemed to have been significantly altered from those laid down by this style guide.
-Note that this \LaTeX\ guide already sets figure captions and references in a smaller font.
+\noindent\textbf{[R3] Speed vs.\ quality trade-off and structural limits of GarmageNet.} GarmageNet's extreme 72-dim-per-panel compression yields fast diffusion but explicit quality cost: image-to-3D BCD $5.64$ vs.\ ours $2.91\!\times\!10^{-2}$ ($\sim\!2\times$ worse, Tab.~5); reconstruction CD on GarmageSet $2.19$ vs.\ $0.46\!\times\!10^{-3}$ ($4.7\times$ worse, Tab.~1). Fig.~6 (main paper) further shows GarmageNet violating the input condition's structural attributes across multiple rows---garment-type switches (row~1: skirt$\rightarrow$t-shirt; row~4: shorts$\rightarrow$skirt), sleeve presence/length mismatches, and form breakdown with anomalous cuff in row~5. Its fixed per-panel structure also \emph{precludes} application to variable-panel domains such as ABO (l.\,274--275). Our method retains $\sim\!1$\,s single-GPU latency while improving both quality and generality.
 
+\noindent\textbf{[R2] On UV-parameterization dependency.} UV reliance is a constraint shared across the multi-chart GI family, ours included. In our target domains---garments and furniture---industry-standard UVs are typically available (ABO 7{,}900 commercial furniture; GarmageSet 14{,}801 professionally designed garments). As a side benefit, training on well-parameterized data yields meshes whose UVs are also clean, making them directly usable in simulation and texturing pipelines.
 
-%------------------------------------------------------------------------
-\section{Formatting your Response}
+\noindent\textbf{[R2] Resolution and latent compression.} Supp.~Sec.~1 shows reconstruction error converges beyond resolution~256---and even with $8\times$ spatial compression to a $32\!\times\!32\!\times\!4$ latent we outperform the uncompressed Omages ($64\!\times\!64\!\times\!4$) on CD/JSD/NC, because TSDF's redundant boundary encoding is robust to latent compression. Scaling to higher resolution simply enlarges the latent grid.
 
-{\bf Make sure to update the paper title and paper ID in the appropriate place in the \verb+tex+ file.}
+\noindent\textbf{[R1] Seams in Fig.~6.} Seams are a structural limitation of the multi-chart GI family, shared by all baselines. Our method substantially reduces boundary error in BCD (Tab.~5); complete removal is left as future work via dual-contouring integration (Sec.~5, Limitations).
 
-All text must be in a two-column format.
-The total allowable size of the text area is $6\frac78$ inches (17.46 cm) wide by $8\frac78$ inches (22.54 cm) high.
-Columns are to be $3\frac14$ inches (8.25 cm) wide, with a $\frac{5}{16}$ inch (0.8 cm) space between them.
-The top margin should begin 1 inch (2.54 cm) from the top edge of the page.
-The bottom margin should be $1\frac{1}{8}$ inches (2.86 cm) from the bottom edge of the page for $8.5 \times 11$-inch paper;
-for A4 paper, approximately $1\frac{5}{8}$ inches (4.13 cm) from the bottom edge of the page.
+\noindent\textbf{[R1] TSDF is a 2D distance in UV-image space, not 3D (l.\,139--141).} For each pixel, the signed Euclidean distance to the nearest patch contour (positive inside a chart, negative outside), truncated at 15 pixels on the $1024\!\times\!1024$ grid (Sec.~3.1, Step~4). It is not a 3D point-to-surface distance. We will state this more clearly in the main text.
 
-Please number any displayed equations.
-It is important for readers to be able to refer to any particular equation.
-
-Wherever Times is specified, Times Roman may also be used.
-The main text should be in 10-point Times, single-spaced.
-Section headings should be in 10 or 12 point Times.
-All paragraphs should be indented 1 pica (approx.\ $\frac{1}{6}$ inch or 0.422 cm).
-Figure and table captions should be 9-point Roman type as in \cref{fig:abo}.
-
-
-List and number all bibliographical references in 9-point Times, single-spaced,
-at the end of your response.
-When referenced in the text, enclose the citation number in square brackets, for example~\cite{Alpher05}.
-Where appropriate, include the name(s) of editors of referenced books.
+\noindent\textbf{[R3] Non-cherry-picked ABO generation.} ABO results are already in Tabs.~1, 4 and Fig.~5. To address cherry-picking concerns, Fig.~\ref{fig:abo} provides a latent-interpolation sequence between two unrelated samples on ABO---globally consistent, plausible furniture geometries appear throughout the entire path.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{figures/abo_interpolation}
-  \caption{Caption here.}
+  \caption{Non-cherry-picked latent interpolation on ABO. Linear interpolation in latent space between two unrelated samples produces globally consistent, plausible furniture geometries throughout the path.}
   \label{fig:abo}
 \end{figure}
-
-To avoid ambiguities, it is best if the numbering for equations, figures, tables, and references in the author response does not overlap with that in the main paper (the reviewer or AC may wonder if you talk about \cref{fig:abo} in the author response or in the actual paper).
-See the \LaTeX\ source of the rebuttal template for a workaround.
-
-
-%-------------------------------------------------------------------------
-\subsection{Illustrations, graphs, and photographs}
-
-Please ensure that any point you wish to make is resolvable in a printed copy of the response.
-Resize fonts in figures to at least 6\:pt ($\sim$2\:mm character height), and choose line widths that render effectively in print.
-Readers (and reviewers/ACs), even of an electronic copy, may choose to print your response in order to read it.
-You cannot insist that they do otherwise, and therefore must not assume that they can zoom in to see tiny details on a graphic.
 
 
 %-------------------------------------------------------------------------

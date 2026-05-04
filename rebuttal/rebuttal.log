@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.5.4)  4 MAY 2026 13:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.4)  4 MAY 2026 15:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/ElmoShim/Documents/diffgi_paper/rebuttal.tex
-(c:/Users/ElmoShim/Documents/diffgi_paper/rebuttal.tex
+**c:/Users/ElmoShim/Documents/diffgi_paper/rebuttal/rebuttal.tex
+(c:/Users/ElmoShim/Documents/diffgi_paper/rebuttal/rebuttal.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -12,14 +12,14 @@ Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
 File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count271
-\c@section=\count272
-\c@subsection=\count273
-\c@subsubsection=\count274
-\c@paragraph=\count275
-\c@subparagraph=\count276
-\c@figure=\count277
-\c@table=\count278
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
@@ -40,15 +40,16 @@ Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 fg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: xetex.def on input line 274.
+Package xcolor Info: Driver file: pdftex.def on input line 274.
 
-(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.d
-ef
-File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.
+def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 )
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.l
 tx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
@@ -79,7 +80,7 @@ Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 s.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: xetex.def on input line 106.
+Package graphics Info: Driver file: pdftex.def on input line 106.
 )
 \Gin@req@height=\dimen149
 \Gin@req@width=\dimen150
@@ -103,14 +104,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count279
+\inf@bad=\count283
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count280
-\leftroot@=\count281
+\uproot@=\count284
+\leftroot@=\count285
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count282
-\DOTSCASE@=\count283
+\classnum@=\count286
+\DOTSCASE@=\count287
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -123,20 +124,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen153
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count284
+\macc@depth=\count288
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count285
+\c@MaxMatrixCols=\count289
 \dotsspace@=\muskip17
-\c@parentequation=\count286
-\dspbrk@lvl=\count287
+\c@parentequation=\count290
+\dspbrk@lvl=\count291
 \tag@help=\toks19
-\row@=\count288
-\column@=\count289
-\maxfields@=\count290
+\row@=\count292
+\column@=\count293
+\maxfields@=\count294
 \andhelp@=\toks20
 \eqnshift@=\dimen154
 \alignsep@=\dimen155
@@ -176,40 +177,40 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen167
 \cmidrulekern=\dimen168
 \defaultaddspace=\dimen169
-\@cmidla=\count291
-\@cmidlb=\count292
+\@cmidla=\count295
+\@cmidlb=\count296
 \@aboverulesep=\dimen170
 \@belowrulesep=\dimen171
-\@thisruleclass=\count293
-\@lastruleclass=\count294
+\@thisruleclass=\count297
+\@lastruleclass=\count298
 \@thisrulewidth=\dimen172
 ) (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip54
 \bibsep=\skip55
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count295
+\c@NAT@ctr=\count299
 )
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/silence\silence.sty
 Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error mes
 sages
-\sl@Save=\count296
-\sl@StateNumber=\count297
-\sl@MessageCount=\count298
-\sl@Casualties=\count299
+\sl@Save=\count300
+\sl@StateNumber=\count301
+\sl@MessageCount=\count302
+\sl@Casualties=\count303
 \sl@Filter=\toks23
 \sl@Message=\toks24
 \sl@UnexpandedMessage=\toks25
 \sl@Mess@ge=\toks26
-\sl@WarningCount=\count300
-\sl@WarningNumber=\count301
-\sl@WarningCasualties=\count302
+\sl@WarningCount=\count304
+\sl@WarningNumber=\count305
+\sl@WarningCasualties=\count306
 \sl@TempBOW=\toks27
 \sl@BankOfWarnings=\toks28
 LaTeX Info: Redefining \GenericWarning on input line 433.
-\sl@ErrorCount=\count303
-\sl@ErrorNumber=\count304
-\sl@ErrorCasualties=\count305
+\sl@ErrorCount=\count307
+\sl@ErrorNumber=\count308
+\sl@ErrorCasualties=\count309
 \sl@TempBOE=\toks29
 \sl@BankOfErrors=\toks30
 LaTeX Info: Redefining \GenericError on input line 601.
@@ -217,7 +218,7 @@ LaTeX Info: Redefining \GenericError on input line 601.
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
 y
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count306
+\etb@tempcnta=\count310
 )
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
@@ -234,31 +235,31 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@hangindent=\dimen180
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count307
-\c@continuedfloat=\count308
+\c@caption@flags=\count311
+\c@continuedfloat=\count312
 )
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.s
 ty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count309
+\c@subfigure=\count313
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count310
+\c@subtable=\count314
 ) (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 CVPR 8.5 x 11-Inch Proceedings Style `cvpr.sty'.
 \cvprrulerbox=\box55
-\cvprrulercount=\count311
+\cvprrulercount=\count315
 \cvprruleroffset=\dimen181
 \cv@lineheight=\dimen182
 \cv@boxheight=\dimen183
 \cv@tmpbox=\box56
-\cv@refno=\count312
-\cv@tot=\count313
-\cv@tmpc@=\count314
-\cv@tmpc=\count315
+\cv@refno=\count316
+\cv@tot=\count317
+\cv@tmpc@=\count318
+\cv@tmpc=\count319
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
 Package: lineno 2026/03/08 line numbers on paragraphs v5.9
 
@@ -274,21 +275,21 @@ Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
-\linenopenalty=\count316
+\linenopenalty=\count320
 \output=\toks31
-\linenoprevgraf=\count317
+\linenoprevgraf=\count321
 \linenumbersep=\dimen184
 \linenumberwidth=\dimen185
-\c@linenumber=\count318
-\c@pagewiselinenumber=\count319
-\c@LN@truepage=\count320
-\c@internallinenumber=\count321
-\c@internallinenumbers=\count322
+\c@linenumber=\count322
+\c@pagewiselinenumber=\count323
+\c@LN@truepage=\count324
+\c@internallinenumber=\count325
+\c@internallinenumbers=\count326
 \quotelinenumbersep=\dimen186
 \bframerule=\dimen187
 \bframesep=\dimen188
 \bframebox=\box57
-\@LN@amsmath@ams@eqpen=\count323
+\@LN@amsmath@ams@eqpen=\count327
 )
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.st
 y
@@ -297,22 +298,27 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@outerparindent=\dimen189
 \enit@toks=\toks32
 \enit@inbox=\box58
-\enit@count@id=\count324
-\enitdp@description=\count325
+\enit@count@id=\count328
+\enitdp@description=\count329
 )) (eccvabbrv.sty
 Package: eccvabbrv Common abbreviations for ECCV
 LaTeX Info: Redefining \onedot on input line 27.
 )
-(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
-y
-Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
- (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/axessibility\axessib
+ility.sty
+Package: axessibility 
+
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.te
+x
+\xs_counta=\count330
+\xs_countb=\count331
 )
-(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
-inekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 )
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/accsupp\accsupp.sty
+Package: accsupp 2019/12/05 v0.6 Accessibility support by marked content (HO)
+
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescap
 e.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
@@ -326,10 +332,30 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 r.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode not found.
+Package pdftexcmds Info: \pdfdraftmode found.
 ))
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/accsupp\accsupp-pdft
+ex.def
+File: accsupp-pdftex.def 2019/12/05 v0.6 accsupp driver for pdfTeX (HO)
+))
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/pdftex\glyphtounic
+ode.tex)
+\@mltext=\toks33
+\@mltexttmp=\toks34
+)
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
+y
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
+inekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
@@ -344,7 +370,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 titlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count326
+\c@section@level=\count332
 )
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringen
 c.sty
@@ -352,20 +378,24 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen190
-\Hy@linkcounter=\count327
-\Hy@pagecounter=\count328
+\Hy@linkcounter=\count333
+\Hy@pagecounter=\count334
 
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
 )
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.st
 y
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count329
+\Hy@SavedSpaceFactor=\count335
 
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 4066.
 Package hyperref Info: Option `colorlinks' set `true' on input line 4066.
@@ -396,14 +426,14 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 ))
-\c@Hy@tempcnt=\count330
+\c@Hy@tempcnt=\count336
 LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen191
 
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 )
-\Fld@menulength=\count331
+\Fld@menulength=\count337
 \Field@Width=\dimen192
 \Fld@charsize=\dimen193
 Package hyperref Info: Hyper figures OFF on input line 6078.
@@ -413,19 +443,16 @@ Package hyperref Info: backreferencing ON on input line 6091.
 Package hyperref Info: Link coloring ON on input line 6096.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count332
-\c@Item=\count333
-\c@Hfootnote=\count334
+\Hy@abspage=\count338
+\c@Item=\count339
+\c@Hfootnote=\count340
 )
-Package hyperref Info: Driver (autodetected): hxetex.
+Package hyperref Info: Driver (autodetected): hpdftex.
 
-(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
-File: hxetex.def 2025-07-12 v7.01o Hyperref driver for XeTeX
-\pdfm@box=\box59
-\c@Hy@AnnotLevel=\count335
-\HyField@AnnotCount=\count336
-\Fld@listcount=\count337
-\c@bookmark@seq@number=\count338
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count341
+\c@bookmark@seq@number=\count342
 \Hy@SectionHShift=\skip57
 )
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/cleveref\cleveref.st
@@ -448,20 +475,15 @@ Package cleveref Info: always capitalise cross-reference names on input line 78
 52.
 )
 ==> First Aid for cleveref.sty applied!
-LaTeX Font Info:    Trying to load font information for TU+ptm on input line 57
-.
-LaTeX Font Info:    No file TUptm.fd. on input line 57.
-
-LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 57.
-
-
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
+7.
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
-xetex.def
-File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
-\g__graphics_track_int=\count339
-\g__pdfannot_backend_int=\count340
-\g__pdfannot_backend_link_int=\count341
+pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count343
 ) (rebuttal.aux)
 \openout1 = `rebuttal.aux'.
 
@@ -475,8 +497,6 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
@@ -485,27 +505,61 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
+
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
+.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count344
+\scratchdimen=\dimen194
+\scratchbox=\box59
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen195
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks36
+)
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
+f-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sy
+s.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/eepic\epic.sty
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
-\@@multicnt=\count342
-\d@lta=\count343
-\@delta=\dimen194
-\@@delta=\dimen195
-\@gridcnt=\count344
-\@joinkind=\count345
-\@dotgap=\dimen196
-\@ddotgap=\dimen197
-\@x@diff=\count346
-\@y@diff=\count347
-\x@diff=\dimen198
-\y@diff=\dimen199
+\@@multicnt=\count350
+\d@lta=\count351
+\@delta=\dimen196
+\@@delta=\dimen197
+\@gridcnt=\count352
+\@joinkind=\count353
+\@dotgap=\dimen198
+\@ddotgap=\dimen199
+\@x@diff=\count354
+\@y@diff=\count355
+\x@diff=\dimen256
+\y@diff=\dimen257
 \@dotbox=\box60
-\num@segments=\count348
-\num@segmentsi=\count349
+\num@segments=\count356
+\num@segmentsi=\count357
 \@datafile=\read2
 )
 Package backref Info: ** backref set up for natbib ** on input line 57.
@@ -516,12 +570,8 @@ Package hyperref Info: Link coloring ON on input line 57.
 
 
 
-LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 64.
-
-
-c:/Users/ElmoShim/Documents/diffgi_paper/rebuttal.tex:64: LaTeX Error: No \titl
-e given.
+c:/Users/ElmoShim/Documents/diffgi_paper/rebuttal/rebuttal.tex:64: LaTeX Error:
+ No \title given.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -543,56 +593,56 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
 (C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for TU+pcr on input line 10
-1.
-LaTeX Font Info:    No file TUpcr.fd. on input line 101.
-
-
-LaTeX Font Warning: Font shape `TU/pcr/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 101.
-
-
-Package natbib Warning: Citation `Alpher05' on page 1 undefined on input line 1
-22.
-
+<figures/abo_interpolation.pdf, id=4, 1993.2969pt x 999.54428pt>
 File: figures/abo_interpolation.pdf Graphic file (type pdf)
 <use figures/abo_interpolation.pdf>
-LaTeX Font Info:    Trying to load font information for TU+phv on input line 14
-3.
-LaTeX Font Info:    No file TUphv.fd. on input line 143.
+Package pdftex.def Info: figures/abo_interpolation.pdf  used on input line 96.
+(pdftex.def)             Requested size: 237.13594pt x 118.90302pt.
 
-LaTeX Font Warning: Font shape `TU/phv/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 143.
-
-[1
-
-
-]
 No file rebuttal.bbl.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1
+11.
+(C:\Users\ElmoShim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+)
+[1{C:/Users/ElmoShim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users
+/ElmoShim/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
-Package natbib Warning: There were undefined citations.
 
-[2
+] [2
 
-] (rebuttal.aux)
+ <./figures/abo_interpolation.pdf>] (rebuttal.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 Package rerunfilecheck Info: File `rebuttal.out' has not changed.
-(rerunfilecheck)             Checksum: 893DA38AF7E550E26EEC60199A085939;719.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 14511 strings out of 402987
- 235610 string characters out of 5447904
- 739343 words of memory out of 5000000
- 43084 multiletter control sequences out of 15000+600000
- 635655 words of font info for 73 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 87i,9n,98p,455b,418s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 15487 strings out of 467871
+ 258051 string characters out of 5416925
+ 755195 words of memory out of 5000000
+ 44153 multiletter control sequences out of 15000+600000
+ 653339 words of font info for 91 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 90i,9n,98p,1110b,462s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/ElmoShim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb><C:/Users/ElmoShim/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><C:/Users/ElmoShim/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/ElmoShim/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ElmoShim/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ElmoShim/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/ElmoS
+him/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users
+/ElmoShim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Us
+ers/ElmoShim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
+:/Users/ElmoShim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb
+><C:/Users/ElmoShim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on rebuttal.pdf (2 pages, 456274 bytes).
+PDF statistics:
+ 88 PDF objects out of 1000 (max. 8388607)
+ 4 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on rebuttal.pdf (2 pages).
