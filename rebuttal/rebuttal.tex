@@ -78,36 +78,43 @@
 % ---------------------------------------------------------------
 % TODO REBUTTAL: Enter your response below
 
-\noindent We thank the reviewers for their feedback. In the camera-ready we will fix the GIMDiffusion citation ([15]$\to$[11]) and adopt ``multi-chart geometry image'' consistently. \rev{rPcg minor}
+\noindent We thank the reviewers for their feedback. In the camera-ready we will fix the GIMDiffusion citation ([15]$\to$[11]), adopt ``multi-chart geometry image'' consistently, and clarify that TSDF (l.\,139--141) is a 2D pixel-to-contour signed distance in UV space.
 
 \medskip
-\noindent\textbf{\rev{rPcg} DMS-based end-to-end differentiability \emph{to mesh} is the key contribution.} Prior GI works (Omages, GIMDiffusion, GarmageNet) are differentiable only up to image-domain pixel losses, since mesh extraction is a non-differentiable post-process and 3D-domain supervision cannot reach the latent. DMS closes this gap, enabling Normal Rendering Loss to be computed in 3D and back-propagated to the VAE encoder/decoder. Tab.~2 isolates the two effects. Replacing occupancy with TSDF alone reduces CD by $60\%$. Adding the Normal Loss (usable only via DMS) further reduces JSD by $43\%$ and lifts NC from $0.92$ to $0.96$. TSDF~+~DMS~+~$\mathcal{L}_\text{Normal}$ is therefore a coupled contribution that enables 3D end-to-end learning, not a sum of standard components.
+\noindent\textbf{\rev{rPcg} DMS-based end-to-end differentiability \emph{to mesh} is the key contribution.} Prior GI works have non-differentiable mesh extraction, so 3D-domain supervision cannot reach the latent. DMS closes this gap, enabling Normal Rendering Loss to be computed in 3D and back-propagated to the VAE. In Tab.~2 of the main paper, adding the Normal Loss (only usable via DMS) reduces JSD by $43\%$ and lifts NC from $0.92$ to $0.96$. This is a direct result of DMS enabling mesh-level end-to-end supervision.
 
-\noindent\textbf{\rev{hEpV} Isolating the effect of SD~1.5 VAE initialization.} We use the SD~1.5 VAE only to accelerate convergence; trained on in-the-wild RGB, it carries no geometry-specific prior. (i) Tab.~2 \emph{fixes} the VAE init and varies only the representation: Occ$\to$TSDF reduces CD by $60\%$, demonstrating that the representation contributes independently. (ii) We are also running a from-scratch-vs.-SD-pretrained VAE comparison showing the two converge to comparable final performance (the latter only faster), to be included in the supplementary. % TODO: from-scratch vs SD-pretrained VAE convergence/final-performance experiment
-
-\noindent\textbf{\rev{hEpV} Unified evaluation protocol.} hEpV's comment led us to identify a misstatement in Supp.~Sec.~5 (\emph{``all methods evaluated using DMS''}). The actual protocol uses DMS for TSDF and a Differentiable Tessellation, a differentiable implementation of Omages' native triangulation, for occupancy; the main paper Sec.~4.2 (l.~275--277) already states the latter correctly. Our Differentiable Tessellation contains no mesh-quality engineering and is bit-identical to Omages' native triangulation across all evaluated ABO samples (Fig.~\ref{fig:tess}), introducing no structural advantage or disadvantage when applied uniformly to every occupancy-based baseline.
+\noindent\textbf{\rev{hEpV} On the use of the SD~1.5 VAE.} GarmageNet's VAE is a panel-wise architecture that aggressively compresses each panel into a single 64-dimensional vector, structurally incompatible with standard image VAEs. Our multi-chart GI is itself a standard image and thus admits the SD~1.5 VAE architecture as-is, allowing us to benefit from pretrained weights, as GIMDiffusion also does. This is purely a convergence-acceleration choice. Fig.~\ref{fig:vae} confirms that a from-scratch VAE converges to comparable capacity, only much slower and with notable instability. Independently, Tab.~2 of the main paper already isolates the representation's contribution: with the VAE init fixed, switching the representation alone (Occ$\to$TSDF) substantially improves reconstruction, showing that the representation contributes independently of the init.
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\linewidth]{figures/quad_tessellation}
-  \caption{Our Differentiable Tessellation produces output bit-identical to Omages' native occupancy triangulation across all evaluated ABO samples (face count, face set, 3D vertex coordinates).}
+  \includegraphics[width=0.85\linewidth]{figures/vae_ablation}
+  \caption{From-scratch vs.\ SD-pretrained VAE: total loss (left) and progressive reconstructions (top: GI, bottom: 3D mesh).}
+  \label{fig:vae}
+\end{figure}
+
+\noindent\textbf{\rev{hEpV} Unified evaluation protocol.} The statement in Supp.~Sec.~5 of the main paper that \emph{``all methods are evaluated using DMS''} is inaccurate. The actual protocol uses DMS for TSDF and a Differentiable Tessellation, a differentiable implementation of Omages' native triangulation, for occupancy; Sec.~4.2 (l.~275--277) of the main paper already states the latter correctly. Our Differentiable Tessellation is bit-identical to Omages' native triangulation (Fig.~\ref{fig:tess}). As a simple tessellation with no mesh-quality engineering, it introduces no structural advantage or disadvantage when used to evaluate the 3D geometry of any occupancy-based baseline.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{figures/quad_tessellation}
+  \caption{Omages' native triangulation (orange) vs.\ our Differentiable Tessellation (blue): bit-identical.}
   \label{fig:tess}
 \end{figure}
 
-\noindent\textbf{\rev{rPcg} Speed vs.\ quality trade-off and structural limits of GarmageNet.} GarmageNet aggressively compresses a dense mesh to 72 dimensions per panel for fast diffusion, but this comes with a quality trade-off. Reconstruction CD on GarmageSet is $4.7\times$ worse (Tab.~1), and image-to-3D BCD is $\sim\!2\times$ worse (Tab.~5). The same is visible in the image-to-3D results of Fig.~6 (main paper): rows~1 and~4 show garment-type changes (skirt$\to$t-shirt; shorts$\to$skirt), other rows show sleeve presence or length mismatches, and row~5 shows a broken form with an anomalous cuff. Its fixed per-panel structure also does not support variable-panel domains such as ABO (l.\,274--275). Our method, without aggressive mesh compression, achieves $\sim\!1$\,s single-GPU latency together with higher quality and generality, resolving this trade-off more effectively.
+\noindent\textbf{\rev{rPcg} Speed vs.\ quality trade-off and structural limits of GarmageNet.} GarmageNet aggressively compresses a dense mesh to 72 dimensions per panel for fast diffusion, but this comes with a quality trade-off. Reconstruction CD on GarmageSet is $4.7\times$ worse (Tab.~1 of the main paper), and image-to-3D BCD is $\sim\!2\times$ worse (Tab.~5). Fig.~6 of the main paper shows row-wise failures (garment-type changes, sleeve mismatches, broken forms). Its fixed per-panel structure also does not support variable-panel domains such as ABO (l.\,274--275 of the main paper). Our method, without aggressive mesh compression, achieves $\sim\!1$\,s single-GPU latency together with higher quality and generality, resolving this trade-off more effectively.
 
-\noindent\textbf{\rev{rPcg} Why no direct GIMDiffusion comparison.} GIMDiffusion's code, weights, and preprocessed dataset are all unreleased, preventing same-condition reproduction. Nevertheless, its geometry pipeline (binary-mask GI + SD-initialized VAE + LDM; Collaborative Control is texture-only) is structurally equivalent to our \emph{``Occ w/o $\mathcal{L}_\text{Normal}$''} ablation row. Against this baseline, our method (TSDF~+~$\mathcal{L}_\text{Normal}$) improves CD by $3.3\times$ and JSD by $3.6\times$ (Tab.~2). We will make this relationship explicit in the camera-ready.
+\noindent\textbf{\rev{rPcg} GIMDiffusion comparison.} GIMDiffusion's code, weights, and preprocessed dataset are all unreleased, preventing same-condition reproduction. Nevertheless, its geometry pipeline (binary-mask GI + SD-initialized VAE + LDM; Collaborative Control is texture-only) is structurally equivalent to our \emph{``Occ w/o $\mathcal{L}_\text{Normal}$''} ablation row. Against this baseline, our method (TSDF~+~$\mathcal{L}_\text{Normal}$) improves CD by $3.3\times$ and JSD by $3.6\times$ (Tab.~2 of the main paper).
 
-\noindent\textbf{\rev{ZMhC, hEpV} Characteristics of multi-chart-GI-based diffusion models.} Our method shares the characteristics of this family. (i) Seams: a structural limitation shared by all baselines; we substantially reduce boundary error in BCD (Tab.~5), and further improvement via alternative representations such as dual contouring is left as future work (Sec.~5). (ii) UV dependency: this imposes a dataset-side constraint, but training on industry-standard UVs yields meshes with clean UVs, directly usable in simulation and texturing pipelines. (iii) Resolution: image-based diffusion can scale freely; per the convergence analysis in Supp.~Sec.~1 we adopt resolution~256 in this paper, with higher resolutions planned for follow-up work.
+\noindent\textbf{\rev{ZMhC, hEpV} Characteristics of multi-chart-GI-based diffusion models.} Our method shares the characteristics of this family. (i) Seams: a structural limitation shared by all baselines; we substantially reduce boundary error in BCD (Tab.~5 of the main paper), and further improvement via alternative representations such as dual contouring is left as future work (Sec.~5 of the main paper). (ii) UV dependency: training on industry-standard UVs yields meshes with clean UVs, directly usable in simulation and texturing pipelines. (iii) Resolution: image-based diffusion scales freely; we adopt resolution~256 per the convergence analysis in Supp.~Sec.~1 of the main paper.
 
-\noindent\textbf{\rev{hEpV} TSDF is a 2D distance in UV-image space, not 3D (l.\,139--141).} It is the signed Euclidean distance from each pixel to the nearest patch contour (positive inside a chart, negative outside), truncated at 15 pixels on the $1024\!\times\!1024$ grid (Sec.~3.1, Step~4); we will state this more clearly in the main text.
+\noindent\textbf{\rev{ZMhC} Mesh-to-DiffGI preprocessing.} Conversion takes 0.2--0.4\,s per mesh; details will be added in the camera-ready.
 
-\noindent\textbf{\rev{rPcg} Non-cherry-picked ABO generation.} See Tabs.~1, 4, Fig.~5, and Fig.~\ref{fig:abo} for a latent-interpolation sequence between two unrelated samples.
+\noindent\textbf{\rev{rPcg} Non-cherry-picked ABO generation.} Fig.~\ref{fig:abo} shows a latent-interpolation sequence between two unrelated samples.
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\linewidth]{figures/abo_interpolation}
-  \caption{Non-cherry-picked latent interpolation on ABO between two unrelated samples; plausible furniture geometries appear throughout the path.}
+  \includegraphics[width=0.85\linewidth]{figures/abo_interpolation}
+  \caption{Latent interpolation on ABO between two unrelated samples.}
   \label{fig:abo}
 \end{figure}
 
